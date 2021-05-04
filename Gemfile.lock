@@ -298,6 +298,7 @@ GEM
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    json (2.5.1)
     jwe (0.4.0)
     jwt (2.2.2)
     kaminari (1.2.1)
@@ -363,6 +364,11 @@ GEM
       activerecord (>= 5.2)
       activesupport (>= 5.2)
     php_serialize (1.2)
+    postmark (1.21.3)
+      json
+    postmark-rails (0.21.0)
+      actionmailer (>= 3.0.0)
+      postmark (>= 1.21.3, < 2.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -619,6 +625,7 @@ DEPENDENCIES
   pg
   pg_search
   php_serialize (~> 1.2)
+  postmark-rails
   pry
   puma (~> 5.2)
   rack-cors (~> 1.0)
@@ -661,4 +668,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.16

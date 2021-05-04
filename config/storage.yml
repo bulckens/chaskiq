@@ -13,6 +13,8 @@ amazon:
    secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
    region: <%= ENV['AWS_S3_REGION'] || 'us-east-1' %>
    bucket: <%= ENV['AWS_S3_BUCKET'] %>
+   endpoint: <%= ENV['AWS_ENDPOINT'] %>
+   force_path_style: true # required for MinIO
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

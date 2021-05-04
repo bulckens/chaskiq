@@ -83,12 +83,17 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  ActionMailer::Base.add_delivery_method :ses, AWS::SES::Base,
-                                         access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-                                         secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+  # ActionMailer::Base.add_delivery_method :ses, AWS::SES::Base,
+  #                                        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+  #                                        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
 
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.delivery_method = :ses
+  # config.action_mailer.perform_deliveries = false
+  # config.action_mailer.delivery_method = :ses
+
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = {
+    api_token: ENV.fetch('POSTMARK_API_TOKEN')
+  }
 
   # ACTIVE JOB
   config.active_job.queue_adapter = :sidekiq

@@ -92,6 +92,7 @@ gem 'aws-sdk-s3', '~> 1.48'
 # https://github.com/drewblas/aws-ses/issues/78
 gem 'aws-ses', git: 'https://github.com/zebitex/aws-ses.git', ref: '78-sigv4-problem'
 gem 'mini_magick', '~> 4.8'
+gem 'postmark-rails'
 
 gem 'active_importer'
 gem 'faraday'
